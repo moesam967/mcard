@@ -1,0 +1,40 @@
+plugins {
+    id "com.android.application"
+    id "kotlin-android"
+    id "com.google.gms.google-services"
+    id "dev.flutter.flutter-gradle-plugin" // The Flutter Gradle Plugin must be applied after the Android and Kotlin Gradle plugins.
+}
+
+android {
+    namespace = "com.mohammedessa.card.mcard"
+    compileSdk = 34 // استخدم الإصدار 34 أو أعلى
+
+    defaultConfig {
+        applicationId = "com.mohammedessa.card.mcard"
+        minSdk = 23 // تأكد من أن هذا السطر موجود وأن القيمة هي 23 أو أعلى
+        targetSdk = 34 // استخدم الإصدار 34 أو أعلى
+        versionCode = 1
+        versionName = "1.0"
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    buildTypes {
+        release {
+            // TODO: Add your own signing config for the release build.
+            // Signing with the debug keys for now, so `flutter run --release` works.
+            signingConfig = signingConfigs.debug
+        }
+    }
+}
+
+flutter {
+    source = "../.."
+}
